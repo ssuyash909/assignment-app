@@ -5,38 +5,34 @@ import {addpost} from '../Actions'
 const AddPost = () => {
     const dispatch = useDispatch();
     const[text,setText] = useState('');
+    
     const handleSubmit =  (e) => {
-      
         e.preventDefault();
 
         if(!text){
             alert('Please add some text to post');
             return
         }
+        
+        const id = Math.floor(Math.random() * 100) + 3;
         const User ="User 1";
         const d = new Date();
         const day = d.toDateString();
         const self =true;
         const comments =[];
         const likes =0;
-        const np ={self,User,text,day,likes,comments};
+        const np ={id,self,User,text,day,likes,comments};
         dispatch(addpost(np));
         setText('');
-   }
+    }
 
     return (
-        <form className='add-form' 
-        onSubmit={handleSubmit}> 
-        <div className='form-control texts'>
-        <label>Post</label>
-        <input type='text' 
-        placeholder='Write something here.....' 
-        value={text}
-
-        onChange={(e)=>setText(e.target.value)}
-        />   
-        </div>
-        <input type ='submit' value='Post' className='btn btn-block texts' />
+        <form className='add-form' onSubmit={handleSubmit}> 
+            <div className='form-control texts'>
+                <label>Post</label>
+                <input type='text' placeholder='Write something here.....' value={text} onChange={(e)=>setText(e.target.value)}/>   
+            </div>
+            <input type ='submit' value='Post' className='btn btn-block texts' />
         </form>
     )
 }

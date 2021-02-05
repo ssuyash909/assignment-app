@@ -1,9 +1,10 @@
-const posts =[
+let posts =[
      
     {
+        "id":1,
       "self" : true,
       "User":"User 1",
-      "text": "Hey Everone",
+      "text": "Hey Everyone",
       "day":"5th Feb,2020",
       "likes":5,
       "comments":[
@@ -14,6 +15,7 @@ const posts =[
           "comment":"How are You"} ]
       },
       {
+        "id":2,
           "self" : false,
           "User":"User 2",
           "text": "Hey Let's Plan for Goa trip",
@@ -27,6 +29,7 @@ const posts =[
               "comment":"when you are willing to go? "} ]
       },
       {
+        "id":3,
           "self" : false,
           "User":"User 1",
           "text": "Guyss,How's your internship going?",
@@ -43,30 +46,23 @@ const posts =[
       }
       ];
 
-export const addPostReducer =(state =posts,action) =>{
+const addPostReducer =(state =posts,action) =>{
         switch(action.type){
           case 'ADDPOST' : 
               state = [...state,action.newp]
+              posts = state;
               return state;
-          
-          
+        case 'DELETEPOST' : 
+              state = action.up
+              let newState = state.filter((st) => {return action.indx !== st.id})
+              return newState;   
+           
           default : return state;
         }
     }
 
-    export const addCommentReducer =(state =[],action) =>{
-        switch(action.type){
-          case 'ADDCOMMENT' : 
-                state = action.up
-                console.log(state)
-              state[action.indx].comments.push(action.newc)
-              return state;
-          
-          
-          default : return state;
-        }
-    }
-    
+
+export default addPostReducer;
     
 
     

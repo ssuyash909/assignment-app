@@ -1,7 +1,7 @@
 export const addpost =(newPost) =>{
     return{
         type:'ADDPOST',
-        newp : newPost
+        newp : newPost,
     };
 };
 
@@ -14,8 +14,28 @@ export const addcomment =(index,newComment,updpost) =>{
     };
 };
 
-export const show =() =>{
+export const addlike =(index,updpost) =>{
     return{
-        type:'SHOWCOMMENT'
-    }
-}
+        type:'ADDLIKE',
+        indx: index,
+        up : updpost
+    };
+};
+
+export const editpost =(index,newtext,updpost) =>{
+    return{
+        type:'EDITPOST',
+        indx: index,
+        up : updpost,
+        nt : newtext
+    };
+};
+
+export const deletepost =(index,updpost) =>{
+    return{
+        type:'DELETEPOST',
+        indx: index,
+        up : updpost,
+    };
+};
+

@@ -1,11 +1,14 @@
-import {addPostReducer,addCommentReducer} from './postReducer'
-import showCommentReducer from './showCommentReducer'
+import addPostReducer from './postReducer'
+import addCommentReducer from './addCommentReducer'
+import addLikeReducer from './addLikeReducer'
+import editPostReducer from './editPostReducer'
 import {combineReducers} from 'redux'
 
 const allReducers = combineReducers({
     postadd : addPostReducer,
-    showComment :showCommentReducer,
-    commentadd : addCommentReducer
+    commentadd : addCommentReducer,
+    likeadd : addLikeReducer,
+    postedit : editPostReducer
 });
 
 export default allReducers;
