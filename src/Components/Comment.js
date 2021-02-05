@@ -6,6 +6,6 @@ const Comment = ({singleComment,indx}) => {
         </div>
     );
 };
-
+  
 export default Comment
    
