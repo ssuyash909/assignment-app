@@ -31,10 +31,37 @@ body {
   font-size: 15px;
   font-family: inherit;
 }
-
-.d-row {
+.flex-column-1 {
   display:flex;
-  background-color: rgb(59, 61, 61);
+  background-color: rgb(38, 39, 39);
+  border: 2px solid #fff;
+  color: rgb(253, 247, 247);
+  text-align:left;
+  flex-shrink: 2;
+  flex-direction:column;
+}
+.flex-row {
+  display:flex;
+  background-color: rgb(38, 39, 39);
+  border: 2px solid #fff;
+  color: rgb(253, 247, 247);
+  text-align:left;
+  flex-shrink: 2;
+  flex-direction:row;
+}
+
+.flex-column-2 {
+  display:flex;
+  background-color: rgb(62, 63, 63);
+  border: 2px solid #fff;
+  color: rgb(253, 247, 247);
+  text-align:left;
+  flex-shrink: 2;
+  flex-direction:column;
+}
+.flex-column-3{
+  display:flex;
+  background-color: rgb(10, 10, 10);
   border: 2px solid #fff;
   color: rgb(253, 247, 247);
   text-align: center;
@@ -62,9 +89,9 @@ body {
 .flex-container-1 {
   display: flex;
   background-color: rgb(228, 85, 20);
-    flex-direction: row;
-    justify-content:space-evenly;
-    border: none;
+  flex-direction: row;
+  justify-content:space-evenly;
+  border: none;
   padding: 10px 20px;
   margin: 5px;
   border-radius: 5px;
@@ -74,7 +101,7 @@ body {
   font-family: inherit;
 }
 
-.flex-container-div1 {
+.flex-container-3 {
 
   background-color: rgb(15, 161, 161);
    margin: 10px;
@@ -185,7 +212,6 @@ footer {
   max-width: 1500px;
   margin: 30px auto;
   overflow: auto;
-  
   border: 1px solid rgb(0, 0, 0);
   padding: 30px;
   border-radius: 5px;
@@ -197,6 +223,6 @@ footer {
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 25px;
   font-family: inherit;
 }
