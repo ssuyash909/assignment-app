@@ -50,7 +50,6 @@ const postReducer =(state =initialposts,action) =>{
         switch(action.type){
           case 'ADDPOST' : 
               state = [...state,action.newp]
-              initialposts = state;
               return state;
         case 'DELETEPOST' : 
               let newState = state.filter((st) => {return action.indx !== st.id})
