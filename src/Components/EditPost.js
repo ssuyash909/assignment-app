@@ -5,13 +5,12 @@ import {editpost} from '../Actions'
 const EditPost = ({onChange,index}) => {
 
     const dispatch = useDispatch();
-    const currentpost = useSelector(state => state.postadd[index].text);
-    const allposts = useSelector(state => state.postadd);
+    const currentpost = useSelector(state => state.posts[index].text);
     const[currentpText,setpost]=useState(currentpost)
     
     const handleSubmit =  (e) => {
         e.preventDefault();
-        dispatch(editpost(index,currentpText,allposts))
+        dispatch(editpost(index,currentpText))
         onChange();
     }
 

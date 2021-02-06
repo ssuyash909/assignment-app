@@ -1,22 +1,19 @@
 import React from 'react'
 import Comment from './Comment'
-import {FaComment} from 'react-icons/fa';
-import {FaThumbsUp,FaEdit,FaRegWindowClose} from 'react-icons/fa';
-import {FaRegUser} from 'react-icons/fa';
-import {useDispatch,useSelector} from 'react-redux'
+import {FaThumbsUp,FaEdit,FaRegWindowClose,FaComment,FaRegUser} from 'react-icons/fa';
+import {useDispatch} from 'react-redux'
 import AddComment from './AddComment'
 import {useState} from 'react'
+import {useSelector} from 'react-redux'
 import {addlike} from '../Actions'
 import EditPost from './EditPost'
 
 
 const Post = ({post, index,onDelete}) => {
-
-  const allposts = useSelector(state => state.postadd);
-  const tlikes = useSelector(state => state.postadd[index].likes);
   const dispatch = useDispatch();
   const[showcb,set] = useState(false)
-  const[show,setep] = useState(false)
+  const[show,setep] = useState(false);
+  const currentpost = useSelector(state => state.posts[index].likes);
 
   const change=()=>{
     set(false)
@@ -52,12 +49,12 @@ const Post = ({post, index,onDelete}) => {
         <div>
           <div className="flex-container-2">
               <div className="p-2">
-                <h6 className="texts">Comments:{post.comments.length}Likes: {tlikes}</h6>
+                <h6 className="texts">Comments:{post.comments.length}Likes: {currentpost}</h6>
               </div>
           </div>
           <div className="flex-container-1">
             <div className="flex-container-1">
-              <FaThumbsUp size={40} onClick= {() => dispatch(addlike(index,allposts))}/> 
+              <FaThumbsUp size={40} onClick= {() => dispatch(addlike(index))}/> 
               <h6 className="texts">Like</h6>
             </div>
             <div className="flex-container-1" >

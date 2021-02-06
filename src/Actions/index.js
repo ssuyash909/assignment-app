@@ -5,37 +5,33 @@ export const addpost =(newPost) =>{
     };
 };
 
-export const addcomment =(index,newComment,updpost) =>{
+export const addcomment =(index,newComment) =>{
     return{
         type:'ADDCOMMENT',
         newc : newComment,
-        indx: index,
-        up : updpost
+        indx: index
     };
 };
 
-export const addlike =(index,updpost) =>{
+export const addlike =(index) =>{
     return{
         type:'ADDLIKE',
         indx: index,
-        up : updpost
     };
 };
 
-export const editpost =(index,newtext,updpost) =>{
+export const editpost =(index,newtext) =>{
     return{
         type:'EDITPOST',
         indx: index,
-        up : updpost,
         nt : newtext
     };
 };
 
-export const deletepost =(index,updpost) =>{
+export const deletepost =(index) =>{
     return{
         type:'DELETEPOST',
-        indx: index,
-        up : updpost,
+        indx: index
     };
 };
 

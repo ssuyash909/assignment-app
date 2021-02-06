@@ -1,4 +1,4 @@
-let posts =[
+let initialposts =[
      
     {
         "id":1,
@@ -46,23 +46,31 @@ let posts =[
       }
       ];
 
-const addPostReducer =(state =posts,action) =>{
+const postReducer =(state =initialposts,action) =>{
         switch(action.type){
           case 'ADDPOST' : 
               state = [...state,action.newp]
-              posts = state;
+              initialposts = state;
               return state;
         case 'DELETEPOST' : 
-              state = action.up
               let newState = state.filter((st) => {return action.indx !== st.id})
-              return newState;   
+              return newState;
+        case 'ADDLIKE' : 
+             state[action.indx].likes  = state[action.indx].likes +1;
+              return state;
+        case 'EDITPOST' : 
+              state[action.indx].text = action.nt
+              return state;   
+        case 'ADDCOMMENT' : 
+              state[action.indx].comments.push(action.newc)
+              return state;                  
            
           default : return state;
         }
     }
 
 
-export default addPostReducer;
+export default postReducer;
     
 
     

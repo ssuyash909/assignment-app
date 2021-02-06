@@ -1,14 +1,8 @@
-import addPostReducer from './postReducer'
-import addCommentReducer from './addCommentReducer'
-import addLikeReducer from './addLikeReducer'
-import editPostReducer from './editPostReducer'
+import postReducer from './postReducer'
 import {combineReducers} from 'redux'
 
 const allReducers = combineReducers({
-    postadd : addPostReducer,
-    commentadd : addCommentReducer,
-    likeadd : addLikeReducer,
-    postedit : editPostReducer
+    posts : postReducer,
 });
 
 export default allReducers;

@@ -1,12 +1,12 @@
 import React from 'react'
 import {useState} from 'react'
-import {useDispatch,useSelector} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import {addcomment} from '../Actions'
 
 const AddComment = ({onChange,index}) => {
     const[comment,setComment] = useState('');
     const dispatch = useDispatch();
-    const allposts = useSelector(state => state.postadd);
+   
     
     const handleSubmit =  (e) => {
         e.preventDefault();
@@ -17,7 +17,7 @@ const AddComment = ({onChange,index}) => {
         }
 
         const cuser ="User1";
-        dispatch(addcomment(index,{cuser,comment},allposts))
+        dispatch(addcomment(index,{cuser,comment}))
         setComment('');
         onChange();
     }

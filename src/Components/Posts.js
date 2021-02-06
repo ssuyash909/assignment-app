@@ -6,12 +6,11 @@ import {deletepost} from '../Actions'
 
 
 const Posts = () => {
-  const allposts = useSelector(state => state.postadd);
+  const allposts = useSelector(state => state.posts);
   const dispatch = useDispatch();
   
   const delpost=(id) =>{
-    console.log(id+"");
-    dispatch(deletepost(id,allposts))
+    dispatch(deletepost(id))
   }
     
   return (
